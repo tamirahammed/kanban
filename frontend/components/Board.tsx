@@ -84,15 +84,15 @@ export function Board() {
           </div>
         </div>
         <motion.div
-          className="flex flex-col items-end rounded-3xl border border-white/10 bg-slate-950/80 px-4 py-3 text-right shadow-[0_18px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl"
+          className="developer-badge relative flex flex-col items-end overflow-hidden rounded-3xl border border-transparent bg-[linear-gradient(rgba(15,23,42,0.95),rgba(15,23,42,0.95))_padding-box,linear-gradient(135deg,var(--kanban-blue),var(--kanban-purple)_45%,var(--kanban-accent-yellow))_border-box] px-4 py-3 text-right shadow-[0_18px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            className="text-[0.64rem] uppercase tracking-[0.3em] text-slate-400/90"
+            className="relative z-10 text-[0.64rem] uppercase tracking-[0.3em] text-slate-200/75"
             animate={{
-              color: ["#92c5ff", "#c084fc", "#facc15", "#92c5ff"],
+              color: ["#209dd7", "#753991", "#ecad0a", "#209dd7"],
             }}
             transition={{
               duration: 3,
@@ -103,12 +103,12 @@ export function Board() {
             Development by
           </motion.div>
           <motion.div
-            className="text-base font-semibold tracking-tight text-white"
+            className="developer-badge__name relative z-10 text-base font-semibold tracking-tight bg-[linear-gradient(90deg,var(--kanban-blue),var(--kanban-purple)_45%,var(--kanban-accent-yellow))] bg-clip-text text-transparent"
             animate={{
               scale: [1, 1.05, 1],
               textShadow: [
                 "0 0 0px rgba(255,255,255,0)",
-                "0 0 12px rgba(96,165,250,0.45)",
+                "0 0 14px rgba(32,157,215,0.45)",
                 "0 0 0px rgba(255,255,255,0)",
               ],
             }}

@@ -192,9 +192,74 @@
     }
   }
 
+  .developer-badge {
+    position: relative;
+    z-index: 0;
+  }
+
+  .developer-badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 12% 20%, rgba(32, 157, 215, 0.22), transparent 22%),
+      radial-gradient(circle at 88% 15%, rgba(117, 57, 145, 0.16), transparent 20%);
+    pointer-events: none;
+    opacity: 0.95;
+  }
+
+  .developer-badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -90%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.24) 45%, transparent 80%);
+    transform: skewX(-18deg);
+    animation: developerBadgeSweep 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .developer-badge__name {
+    animation: developerBadgeHue 10s ease-in-out infinite;
+  }
+
+  @keyframes developerBadgeSweep {
+    0% {
+      left: -90%;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      left: 105%;
+      opacity: 1;
+    }
+    70% {
+      opacity: 0;
+    }
+    100% {
+      left: 105%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes developerBadgeHue {
+    0%,
+    100% {
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      filter: hue-rotate(12deg);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .kanban-logo__sweep,
-    .kanban-logo__card {
+    .kanban-logo__card,
+    .developer-badge::after,
+    .developer-badge__name {
       animation: none !important;
     }
   }
