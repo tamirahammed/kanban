@@ -1,25 +1,25 @@
-# Kanban Project Manager
+# Kanban
 
-## Instructions
+A single-board Kanban MVP. Five renameable columns, cards with title and details, drag and drop, add and delete. No persistence.
 
-This is a skeleton project to be the basis for your Kanban project for Week 1 of the Complete AI Coder Course. See the course resources for more.
+## Stack
 
-You should clone this repo within your projects directory with:
+Next.js 15 (App Router, client rendered), React 19, TypeScript, Tailwind CSS v4, @dnd-kit. Vitest + Testing Library for unit tests, Playwright for end-to-end.
 
-`git clone https://github.com/ed-donner/kanban.git`
+## Run
 
-And then refine the AGENTS.md before using in your Coding Agent of choice.
+```
+npm install
+npm run dev
+```
 
-If you don't have git installed, you can [install it here](https://git-scm.com/install/) and you might need to reboot afterwards.
+Open http://localhost:3000.
 
-## Contributing your AGENTS.md
+## Test
 
-If you have suggested AGENTS.md changes that have worked well for you, please contribute them to benefit other students! Follow the instructions linked [here](https://edwarddonner.com/pr) to raise a PR to put it in community_contributions. Name your file something like ED_DONNER_AGENTS.md but with your name..
-
-I can't wait to see your changes.
-
-## Posting your app
-
-When you've successfully built a Kanban app, if you'd like to post about it on LinkedIn and tag me, then I'll weigh in to amplify your success and draw more attention to your achievements.
-
-If you see other students doing this, please weigh in yourself to add your support and encouragement. It's so helpful for the community if we support each other.
+```
+npm test            # unit tests
+npm run e2e:install # one-time Playwright browser install
+npm run e2e         # end-to-end tests
+```
+>>>>>>> ae54a0c7eb66395f22cf404dd4cfc69715178f63
