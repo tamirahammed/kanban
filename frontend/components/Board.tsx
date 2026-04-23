@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   DndContext,
   KeyboardSensor,
@@ -82,11 +83,44 @@ export function Board() {
             <div className="text-sm text-muted-foreground">One board. No persistence. Drag cards between columns.</div>
           </div>
         </div>
-        <div className="hidden sm:block text-sm text-muted-foreground">
-          <span className="font-semibold text-[color:var(--kanban-navy)]">MVP</span>{" "}
-          <span className="text-muted-foreground">with</span>{" "}
-          <span className="font-semibold text-[color:var(--kanban-accent-yellow)]">DnD</span>
-        </div>
+        <motion.div
+          className="hidden sm:flex flex-col items-end text-right"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.div
+            className="text-xs text-muted-foreground mb-1"
+            animate={{
+              color: ["#209dd7", "#753991", "#ecad0a", "#209dd7"],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            Developed by
+          </motion.div>
+          <motion.div
+            className="text-sm font-bold text-[color:var(--kanban-navy)]"
+            animate={{
+              scale: [1, 1.05, 1],
+              textShadow: [
+                "0 0 0px rgba(32, 157, 215, 0)",
+                "0 0 10px rgba(32, 157, 215, 0.5)",
+                "0 0 0px rgba(32, 157, 215, 0)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            Tamir Khan
+          </motion.div>
+        </motion.div>
       </div>
 
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
