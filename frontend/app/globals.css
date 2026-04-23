@@ -192,91 +192,9 @@
     }
   }
 
-  .developer-banner {
-    position: relative;
-  }
-
-  .developer-banner::before {
-    content: "";
-    position: absolute;
-    inset: -30% -10% 20% auto;
-    background: radial-gradient(circle at 15% 30%, rgba(56,189,248,0.28), transparent 24%),
-      radial-gradient(circle at 85% 20%, rgba(168,85,247,0.22), transparent 20%);
-    filter: blur(48px);
-    opacity: 0.85;
-    animation: developerGlow 8s ease-in-out infinite alternate;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .developer-banner > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .developer-banner__name {
-    background: linear-gradient(90deg, #5dd7ff, #a86dff, #facc15);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: developerHue 12s linear infinite;
-  }
-
-  .developer-banner__name::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, rgba(255,255,255,0.45), rgba(255,255,255,0) 48%, rgba(255,255,255,0.18));
-    transform: translateX(-110%);
-    animation: developerShimmer 3s ease-in-out infinite;
-    mix-blend-mode: screen;
-    pointer-events: none;
-  }
-
-  .developer-banner__desc {
-    max-width: 46rem;
-  }
-
-  @keyframes developerGlow {
-    0%,
-    100% {
-      transform: translateY(0px) scale(1);
-      opacity: 0.82;
-    }
-    50% {
-      transform: translateY(-4px) scale(1.02);
-      opacity: 1;
-    }
-  }
-
-  @keyframes developerHue {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    50% {
-      filter: hue-rotate(15deg);
-    }
-    100% {
-      filter: hue-rotate(0deg);
-    }
-  }
-
-  @keyframes developerShimmer {
-    0% {
-      transform: translateX(-110%);
-    }
-    50% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .kanban-logo__sweep,
-    .kanban-logo__card,
-    .developer-banner::before,
-    .developer-banner__name::after {
+    .kanban-logo__card {
       animation: none !important;
     }
   }

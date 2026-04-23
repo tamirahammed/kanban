@@ -73,7 +73,7 @@ export function Board() {
 
   return (
     <div className="flex h-[calc(100vh-5rem)] flex-col">
-      <div className="flex items-center justify-between gap-4 px-1">
+      <div className="flex flex-wrap items-center justify-between gap-4 px-1">
         <div className="flex items-center gap-3">
           <KanbanLogo className="shrink-0" />
           <div>
@@ -84,15 +84,15 @@ export function Board() {
           </div>
         </div>
         <motion.div
-          className="hidden sm:flex flex-col items-end text-right"
+          className="flex flex-col items-end rounded-3xl border border-white/10 bg-slate-950/80 px-4 py-3 text-right shadow-[0_18px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            className="text-xs text-muted-foreground mb-1"
+            className="text-[0.64rem] uppercase tracking-[0.3em] text-slate-400/90"
             animate={{
-              color: ["#209dd7", "#753991", "#ecad0a", "#209dd7"],
+              color: ["#92c5ff", "#c084fc", "#facc15", "#92c5ff"],
             }}
             transition={{
               duration: 3,
@@ -100,16 +100,16 @@ export function Board() {
               ease: "linear",
             }}
           >
-            Developed by
+            Development by
           </motion.div>
           <motion.div
-            className="text-sm font-bold text-[color:var(--kanban-navy)]"
+            className="text-base font-semibold tracking-tight text-white"
             animate={{
               scale: [1, 1.05, 1],
               textShadow: [
-                "0 0 0px rgba(32, 157, 215, 0)",
-                "0 0 10px rgba(32, 157, 215, 0.5)",
-                "0 0 0px rgba(32, 157, 215, 0)",
+                "0 0 0px rgba(255,255,255,0)",
+                "0 0 12px rgba(96,165,250,0.45)",
+                "0 0 0px rgba(255,255,255,0)",
               ],
             }}
             transition={{
